@@ -25,12 +25,21 @@ export class AddStudentsComponent implements OnInit{
   AddStudent(){
    this.stdservice.addStudent(this.addStudentRequest).subscribe({
   next: (res) => {
-    console.log('Student added successfully:', res);
+    alert('Student added successfully for user : '+res.name);
+     this.addStudentRequest = {
+        studentId: 0,
+        name: "",
+        gender: "",
+       age: undefined,
+        standard: "",
+        fathersName: ""
+      };
   },
   error: (err) => {
-    console.error('Error adding student:', err); // Already logs useful info
+    console.error('Error adding student:', err);
     alert('Network or server issue. Please check your connection.');
   }
+
 });
 
 }
