@@ -1,0 +1,26 @@
+<div class="container my-5">
+    <p class="mb-heder">Students List</p>
+    <table class="table table-striped" *ngIf="students.length > 0" >
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Standard</th>
+                <th>Fathers Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{student.studentId}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.gender}}</td>
+                <td>{{student.age}}</td>
+                <td>{{student.standard}}</td>
+                <td>{{student.fathersName}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 *ngIf="students.length == 0">Students Not Found</h3>
+</div>
